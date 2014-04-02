@@ -31,13 +31,15 @@ abstract class LogReader_Abstract {
     
     public function setFile($filename) {
         $this->_filename = $filename;
-        if (is_readable($filename)) {
-            $this->_file = new SplFileObject($filename);
-        } else {
+        if (!is_file($filename)) {
+            throw new LogReader_Exception("File '$filename' does not exist");
+        }
+        if (!is_readable($filename)) {
             throw new LogReader_Exception("File '$filename' is not readable");
         }
+        $this->_file = new SplFileObject($filename);
     }
-    
+
     public function setStorage(LogReader_Storage_Interface $storage) {
         $this->_storage = $storage;
     }

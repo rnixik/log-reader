@@ -7,7 +7,7 @@ class LogReader_ApachePhp extends LogReader_Abstract {
         $item = new LogReader_Item_ApachePhp();
         while (!$this->_file->eof()) {
             
-            if (preg_match('/^\[(.+?)\] \[(.+?)\] \[(.+?)\] (.+?) (.+), referer: (.+)/', $this->_file->fgets(), $matches)) {
+            if (preg_match('/^\[(.+?)\] \[(.+?)\] \[(.+?)\] (PHP )?(.+), referer: (.+)/', $this->_file->fgets(), $matches)) {
                 list ($raw, $date, $error, $client, $php, $message, $referer) = $matches;
                 
                 if (preg_match('/^(Stack trace|[\d])/', trim($message))) {
