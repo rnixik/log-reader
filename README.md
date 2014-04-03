@@ -19,7 +19,7 @@ $logs = array_reverse($logs);
 var_dump($logs);
 ```
 
-Each item of $logs contains: timestamp, type, message.
+Each item of $logs contains: timestamp, type, message. 
 See example_apache.php.
 
 ### Nginx
@@ -34,5 +34,5 @@ $logs = array_reverse($logs);
 var_dump($logs);
 ```
 
-Each item of $logs contains: timestamp, type, message, host, request
+Each item of $logs contains: timestamp, type, message, host, request. 
 See example_nginx.php.
