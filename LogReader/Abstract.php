@@ -1,5 +1,7 @@
 <?php
 
+require_once 'LogReader/Exception.php';
+
 abstract class LogReader_Abstract {
     
     /**

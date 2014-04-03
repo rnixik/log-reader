@@ -10,6 +10,9 @@ Usage
 ### Apache
 
 ```php
+require_once 'LogReader/Abstract.php';
+require_once 'LogReader/Item/ApachePhp.php';
+
 $logReader = new LogReader_ApachePhp("/var/log/apache2/error.log", new LogReader_Storage_Array());
 $logReader->read();
 
@@ -25,6 +28,9 @@ See example_apache.php.
 ### Nginx
 
 ```php
+require_once 'LogReader/Nginx.php';
+require_once 'LogReader/Storage/Array.php';
+
 $logReader = new LogReader_Nginx("/var/log/nginx/error.log", new LogReader_Storage_Array());
 $logReader->read();
 

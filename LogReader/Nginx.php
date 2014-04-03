@@ -1,5 +1,8 @@
 <?php
 
+require_once 'LogReader/Abstract.php';
+require_once 'LogReader/Item/Nginx.php';
+
 class LogReader_Nginx extends LogReader_Abstract {
     
     

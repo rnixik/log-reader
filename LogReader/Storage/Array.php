@@ -1,5 +1,7 @@
 <?php
 
+require_once 'LogReader/Storage/Interface.php';
+
 class LogReader_Storage_Array implements LogReader_Storage_Interface {
     
     /**

@@ -1,6 +1,7 @@
 <?php
 
-require_once 'autoloader.php';
+require_once 'LogReader/Nginx.php';
+require_once 'LogReader/Storage/Array.php';
 
 $logReader = new LogReader_Nginx("/var/log/nginx/error.log", new LogReader_Storage_Array());
 $logReader->read();

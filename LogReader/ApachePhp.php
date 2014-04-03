@@ -1,5 +1,8 @@
 <?php
 
+require_once 'LogReader/Abstract.php';
+require_once 'LogReader/Item/ApachePhp.php';
+
 class LogReader_ApachePhp extends LogReader_Abstract {
 
     public function read() {
