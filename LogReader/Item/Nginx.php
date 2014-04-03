@@ -39,11 +39,11 @@ class LogReader_Item_Nginx extends LogReader_Item_Abstract {
 
     
     public function getReferrer() {
-        return $this->_referer;
+        return $this->_referrer;
     }
 
     public function setReferrer($referer) {
-        $this->_referer = $referer;
+        $this->_referrer = $referer;
     }
 
     public function getRequestUrl() {
