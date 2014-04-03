@@ -10,8 +10,8 @@ Usage
 ### Apache
 
 ```php
-require_once 'LogReader/Abstract.php';
-require_once 'LogReader/Item/ApachePhp.php';
+require_once 'LogReader/ApachePhp.php';
+require_once 'LogReader/Storage/Array.php';
 
 $logReader = new LogReader_ApachePhp("/var/log/apache2/error.log", new LogReader_Storage_Array());
 $logReader->read();
