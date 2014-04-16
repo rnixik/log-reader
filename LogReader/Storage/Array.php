@@ -42,6 +42,11 @@ class LogReader_Storage_Array implements LogReader_Storage_Interface {
                 $uniqRows[$item->getId()] = $item;
             }
         }
+        
+        uasort($uniqRows, function($a, $b) {
+            return strtotime($a->getTimestamp()) > strtotime($b->getTimestamp());
+        });
+        
         return $uniqRows;
     }
 
