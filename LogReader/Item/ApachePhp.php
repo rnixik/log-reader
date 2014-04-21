@@ -4,6 +4,8 @@ require_once 'LogReader/Item/Abstract.php';
 
 class LogReader_Item_ApachePhp extends LogReader_Item_Abstract {
     
+    protected $_clientIp;
+    
     /**
      *
      * @var array
@@ -40,6 +42,22 @@ class LogReader_Item_ApachePhp extends LogReader_Item_Abstract {
      */
     public function getStackTrace() {
         return $this->_stackTrace;
+    }
+    
+    /**
+     * 
+     * @param string $clientIp
+     */
+    public function setClientIp($clientIp) {
+        $this->_clientIp = $clientIp;
+    }
+    
+    /**
+     * 
+     * @return string
+     */
+    public function getClientIp() {
+        return $this->_clientIp;
     }
 
 }

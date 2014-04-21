@@ -9,7 +9,7 @@ class LogReader_ApachePhp extends LogReader_Abstract {
         $item = new LogReader_Item_ApachePhp();
         while (!$this->_file->eof()) {
 
-            if (preg_match('/^\[(?<date>.+?)\] \[(?:.+?)\] \[(?<client>.+?)\] (?<php_type>PHP)?(?<message>.+?)(, referer: (?<referer>.+))?$/', $this->_file->fgets(), $matches)) {
+            if (preg_match('/^\[(?<date>.+?)\] \[(?:.+?)\] \[client (?<client>.+?)\] (?<php_type>PHP)?(?<message>.+?)(, referer: (?<referer>.+))?$/', $this->_file->fgets(), $matches)) {
                 $date = $matches['date'];
                 $message = $matches['message'];
                 
@@ -31,6 +31,9 @@ class LogReader_ApachePhp extends LogReader_Abstract {
                     $item->setType($type);
                     if (isset($matches['referer'])) {
                         $item->setReferer($matches['referer']);
+                    }
+                    if (isset($matches['client'])) {
+                        $item->setClientIp($matches['client']);
                     }
                     $item->setMessage($message);    
                 }
